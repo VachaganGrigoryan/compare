@@ -78,8 +78,12 @@ class Compare:
 
 
 if __name__ == '__main__':
-    exp = [65, {"foo": "bar", "john": "doe"}]
-    act = [True, {"john": "doe", "foo": "bar", 'e': 54}]
+
+    with open('expected.json', 'r') as exp_file:
+        exp = json.load(exp_file)
+
+    with open('actual.json', 'r') as act_file:
+        act = json.load(act_file)
 
     diff = Compare(exp, act)
     diff.compare()
