@@ -87,4 +87,4 @@ if __name__ == '__main__':
 
     diff = Compare(exp, act)
     diff.compare()
-    print(json.dumps(diff.DIFF, indent=4))
+    print(json.dumps(diff.DIFF, indent=4, ensure_ascii=False))
